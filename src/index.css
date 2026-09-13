@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Inter", sans-serif;
+  color: #111827;
+  background: #fff;
+}
+
+/* ONE shared gradient – brand name, hero heading highlight, primary buttons */
+.gradient-brand {
+  background: linear-gradient(90deg, #ff6b35 0%, #e91e8c 50%, #9b59b6 100%);
+}
+.gradient-brand-text {
+  background: linear-gradient(90deg, #ff6b35 0%, #e91e8c 50%, #9b59b6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
