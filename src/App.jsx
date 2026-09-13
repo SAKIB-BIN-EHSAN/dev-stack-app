@@ -4,6 +4,7 @@ import Banner from './components/Banner/Banner';
 import Footer from './components/Footer/Footer';
 import Navbar from './components/Navbar/Navbar';
 import TechnologyList from './components/TechnologyList/TechnologyList';
+import Loader from './components/Loader/Loader';
 
 function App() {
 
@@ -20,7 +21,7 @@ function App() {
     <>
       <Navbar />
       <Banner />
-      <Suspense fallback={<h1>Loading....</h1>}>
+      <Suspense fallback={<Loader />}>
         <TechnologyList stackListPromise={stackListPromise} />
       </Suspense>
       <Footer />
