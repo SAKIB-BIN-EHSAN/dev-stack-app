@@ -1,6 +1,7 @@
 import { use, useState } from "react";
 import AvailableStacks from "../AvailableStacks/AvailableStacks";
 import MyStack from "../MyStack/MyStack";
+import { Bounce, toast } from "react-toastify";
 
 const TechnologyList = ({ stackListPromise }) => {
   const stackListData = use(stackListPromise);
@@ -23,11 +24,35 @@ const TechnologyList = ({ stackListPromise }) => {
       return stack.id !== stackId;
     });
 
+    toast.error(`${stackName} is removed from your stack successfully!`, {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+    });
+
     setSelectedStack(remainingMyStacks);
   };
 
   // Remove all selected stack from my stack section
   const handleRemoveAll = () => {
+    toast.error('All stacks are removed successfully!', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+    });
+
     setSelectedStack([]);
   };
 
