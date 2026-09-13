@@ -1,0 +1,17 @@
+.nav-link-active {
+  background: linear-gradient(90deg,#FF6B35 0%,#E91E8C 50%,#9B59B6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 600;
+}
+.btn-signup {
+  background: linear-gradient(90deg,#FF6B35 0%,#E91E8C 50%,#9B59B6 100%);
+  color:#fff;
+  padding:8px 20px;
+  border-radius:9999px;
+  font-weight:600;
+  font-size:14px;
+  white-space:nowrap;
+  transition:opacity .2s;
+}

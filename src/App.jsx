@@ -1,12 +1,13 @@
-import './App.css'
+import './App.css';
+import Navbar from './components/Navbar/Navbar';
 
 function App() {
 
   return (
     <>
-      <h1>Dev Stack App</h1>
+      <Navbar />
     </>
   )
 }
 
-export default App
+export default App;
