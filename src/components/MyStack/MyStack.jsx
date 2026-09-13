@@ -1,3 +1,5 @@
+import "./MyStack.css";
+
 const MyStack = ({ selectedStack }) => {
   return (
     <>
