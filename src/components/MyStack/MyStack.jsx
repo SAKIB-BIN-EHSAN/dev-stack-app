@@ -1,13 +1,13 @@
 import "./MyStack.css";
 
-const MyStack = ({ selectedStack }) => {
+const MyStack = ({ selectedStack, handleRemoveMyStack, handleRemoveAll }) => {
   return (
     <>
       <div className="stack-sidebar">
         <div className="mb-4">
           <h3 className="text-lg font-bold text-gray-900">Your Stack</h3>
             <p id="stack-count" className="text-sm text-gray-500 mt-0.5">
-                "No technologies selected yet."
+              {selectedStack.length === 0 ? "No technologies selected yet." : `${selectedStack.length} Technology Selected`}
             </p>
         </div>
         {selectedStack.map((stack) => (
@@ -26,7 +26,7 @@ const MyStack = ({ selectedStack }) => {
               </p>
               <p className="text-xs text-gray-400">{stack.category}</p>
             </div>
-            <button className="shrink-0 text-gray-400 hover:text-gray-700 transition-colors p-1 rounded cursor-pointer">
+            <button onClick={() => handleRemoveMyStack(stack.id, stack.name)} className="shrink-0 text-gray-400 hover:text-gray-700 transition-colors p-1 rounded cursor-pointer">
               <svg
                 width="14"
                 height="14"
@@ -42,6 +42,15 @@ const MyStack = ({ selectedStack }) => {
             </button>
           </div>
         ))}
+
+        {selectedStack.length === 0 && (
+          <div className="stack-empty-box">Your stack is empty.</div>
+        )}
+        {selectedStack.length !== 0 && (
+          <button className="btn-remove-all" onClick={() => handleRemoveAll()}>
+            Remove All
+          </button>
+        )}
       </div>
     </>
   );

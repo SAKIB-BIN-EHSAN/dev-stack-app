@@ -17,6 +17,20 @@ const TechnologyList = ({ stackListPromise }) => {
     setSelectedStack([...selectedStack, justSelectedStack]);
   };
 
+  // Remove a single selected stack from my stack section
+  const handleRemoveMyStack = (stackId, stackName) => {
+    const remainingMyStacks = selectedStack.filter((stack) => {
+      return stack.id !== stackId;
+    });
+
+    setSelectedStack(remainingMyStacks);
+  };
+
+  // Remove all selected stack from my stack section
+  const handleRemoveAll = () => {
+    setSelectedStack([]);
+  };
+
   return (
     <>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
@@ -45,6 +59,8 @@ const TechnologyList = ({ stackListPromise }) => {
           <div className="w-full lg:w-72 xl:w-80">
             <MyStack
               selectedStack={selectedStack}
+              handleRemoveMyStack={handleRemoveMyStack}
+              handleRemoveAll={handleRemoveAll}
             />
           </div>
         </div>
