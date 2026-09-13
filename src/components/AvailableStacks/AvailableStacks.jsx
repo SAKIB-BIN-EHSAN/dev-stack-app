@@ -9,7 +9,8 @@ const AvailableStacks = ({ availableStack, selectedStack, handleSelectedStack })
           className="stack-card-wrapper"
         >
           <StackCard 
-            stack={stack}
+            stack={stack} 
+            isStackSelected={selectedStack.some((st) => st.id === stack.id)}
             handleSelectedStack={handleSelectedStack}
           />
         </div>
