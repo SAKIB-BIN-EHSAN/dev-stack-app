@@ -1,0 +1,48 @@
+/* Sidebar */
+.stack-sidebar {
+  background:#fff; border:1.5px solid #e5e7eb; border-radius:14px;
+  padding:20px; position:sticky; top:80px; height:fit-content;
+}
+
+/* Stack item row */
+.stack-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 10px 12px;
+  background: #fff;
+  margin-bottom: 8px;
+}
+
+/* Empty box */
+.stack-empty-box {
+  border: 1.5px dashed #d1d5db;
+  border-radius: 10px;
+  padding: 28px 16px;
+  text-align: center;
+  color: #9ca3af;
+  font-size: 13px;
+  background: #fafafa;
+}
+
+/* Remove all */
+.btn-remove-all {
+  width: 100%;
+  padding: 10px 0;
+  border-radius: 10px;
+  border: 1.5px solid #ef4444;
+  color: #ef4444;
+  font-weight: 600;
+  font-size: 14px;
+  background: transparent;
+  transition:
+    background 0.2s,
+    color 0.2s;
+  cursor: pointer;
+  margin-top: 16px;
+}
+.btn-remove-all:hover {
+  background: #fef2f2;
+}

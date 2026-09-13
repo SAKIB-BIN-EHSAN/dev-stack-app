@@ -1,5 +1,9 @@
 import "./StackCard.css";
-const StackCard = ({stack}) => {
+const StackCard = ({stack, isStackSelected, handleSelectedStack}) => {
+
+    const handleClickedStack = (stackId) => {
+        handleSelectedStack(stackId);
+    }
     return (
         <>
             <div className="tech-card">
@@ -27,8 +31,8 @@ const StackCard = ({stack}) => {
                     </span>
                     </span>
                 </div>
-                <button>
-                    Add to Stack
+                <button onClick={() => handleClickedStack(stack.id, stack.name)} className="btn-add" disabled={isStackSelected}>
+                    {isStackSelected ? "✓ Added to Stack" : "Add to Stack"}
                 </button>
             </div>
         </>

@@ -1,6 +1,6 @@
 import StackCard from "../StackCard/StackCard";
 
-const AvailableStacks = ({ availableStack }) => {
+const AvailableStacks = ({ availableStack, selectedStack, handleSelectedStack }) => {
   return (
     <>
       {availableStack.map((stack) => (
@@ -9,7 +9,8 @@ const AvailableStacks = ({ availableStack }) => {
           className="stack-card-wrapper"
         >
           <StackCard 
-            stack={stack} 
+            stack={stack}
+            handleSelectedStack={handleSelectedStack}
           />
         </div>
       ))}

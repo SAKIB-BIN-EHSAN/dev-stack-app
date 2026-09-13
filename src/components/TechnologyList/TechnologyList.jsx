@@ -4,9 +4,19 @@ import MyStack from "../MyStack/MyStack";
 
 const TechnologyList = ({ stackListPromise }) => {
   const stackListData = use(stackListPromise);
-  
+
   const [availableStack] = useState(stackListData);
-  
+  const [selectedStack, setSelectedStack] = useState([]);
+
+  const handleSelectedStack = (stackId) => {
+
+    const justSelectedStack = availableStack.find((stack) => {
+      return stack.id === stackId;
+    });
+
+    setSelectedStack([...selectedStack, justSelectedStack]);
+  };
+
   return (
     <>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
@@ -26,12 +36,15 @@ const TechnologyList = ({ stackListPromise }) => {
           >
             {/* Available Stacks Left Sidebar */}
             <AvailableStacks
-            availableStack={availableStack}
+              availableStack={availableStack}
+              selectedStack={selectedStack}
+              handleSelectedStack={handleSelectedStack}
             />
           </div>
-          {/* My Stack Right Sidebar */}
+          {/* <Your Stack Right Sidebar */}
           <div className="w-full lg:w-72 xl:w-80">
             <MyStack
+              selectedStack={selectedStack}
             />
           </div>
         </div>
