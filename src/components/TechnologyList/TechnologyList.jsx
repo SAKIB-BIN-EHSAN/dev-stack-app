@@ -1,10 +1,11 @@
-import { use } from "react";
+import { use, useState } from "react";
 import AvailableStacks from "../AvailableStacks/AvailableStacks";
 import MyStack from "../MyStack/MyStack";
 
 const TechnologyList = ({ stackListPromise }) => {
   const stackListData = use(stackListPromise);
-  console.log(stackListData);
+  
+  const [availableStack] = useState(stackListData);
   
   return (
     <>
@@ -25,6 +26,7 @@ const TechnologyList = ({ stackListPromise }) => {
           >
             {/* Available Stacks Left Sidebar */}
             <AvailableStacks
+            availableStack={availableStack}
             />
           </div>
           {/* My Stack Right Sidebar */}

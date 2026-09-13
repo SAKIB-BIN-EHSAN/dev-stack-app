@@ -1,7 +1,18 @@
-const AvailableStacks = () => {
+import StackCard from "../StackCard/StackCard";
+
+const AvailableStacks = ({ availableStack }) => {
   return (
     <>
-      <h1>Available Stacks</h1>
+      {availableStack.map((stack) => (
+        <div
+          key={stack.id}
+          className="stack-card-wrapper"
+        >
+          <StackCard 
+            stack={stack} 
+          />
+        </div>
+      ))}
     </>
   );
 };
